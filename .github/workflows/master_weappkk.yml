@@ -25,6 +25,9 @@ jobs:
       - name: Restore NuGet packages
         run: nuget restore
 
+      - name: show files
+        run: dir
+
       - name: Publish to folder
         run: msbuild /nologo /verbosity:m /t:Build /t:pipelinePreDeployCopyAllFilesToOneFolder /p:_PackageTempDir="\published\"
 
